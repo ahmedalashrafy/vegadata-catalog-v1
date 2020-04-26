@@ -1,0 +1,6 @@
+jenkins:
+    image: jenkins:2.3
+    container_name: jenkins
+    restart: always
+    ports:
+        - "${PORT}:8080"
