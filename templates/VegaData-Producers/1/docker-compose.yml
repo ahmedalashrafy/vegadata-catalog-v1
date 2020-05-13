@@ -65,8 +65,8 @@ services:
       SQL_PORT: '3306'
       SQL_USER: vega_app
       WORKING_ENV: prod
-      NOTEBOOKS_URL: ${base_url}:${analysis_port}/
-      VISUALIZATION_URL: ${base_url}:${visualization_port}
+      NOTEBOOKS_URL: http://${base_url}:${analysis_port}/
+      VISUALIZATION_URL: http://${base_url}:${visualization_port}
     stdin_open: true
     working_dir: /usr/src/vega_platform_frontend
     entrypoint:
@@ -86,7 +86,7 @@ services:
     - gunicorn
     - vega_platform_frontend.wsgi:application
     - --bind
-    - 0.0.0.0:80
+    - 0.0.0.0:8000
     labels:
       io.rancher.container.pull_image: always
       io.rancher.scheduler.affinity:host_label: producers=true
