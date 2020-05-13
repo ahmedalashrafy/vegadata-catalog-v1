@@ -30,8 +30,8 @@ catalog:
     type: "string"
     required: true
     label: "base url/ domain"
-    description: "the base url that will be used for all urls"
-    default: "http://elmstaging.vegadata.ai"
+    description: "the base url that will be used for all urls. WITHOUT HTTP://"
+    default: "elmstaging.vegadata.ai"
     required: true
   - variable: "visualization_port"
     type: "int"
